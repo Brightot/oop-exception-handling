@@ -1,4 +1,13 @@
 
+# custom exception for invalid student ID
+class InvalidIDError(Exception):
+    pass
+
+
+# custom exception for invalid grade
+class InvalidGradeError(ValueError):
+    pass
+
 # This class represents a student
 class Student:
 
