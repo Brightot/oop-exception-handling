@@ -13,3 +13,14 @@ class Student:
 
         # dictionary to store subject and grade
         self._grades = {}
+
+    # this method adds a grade for a subject
+    def add_grade(self, subject, grade):
+
+        # if subject already exists, do nothing
+        if subject in self._grades:
+            return False
+
+        # otherwise add the subject and grade
+        self._grades[subject] = grade
+        return True
