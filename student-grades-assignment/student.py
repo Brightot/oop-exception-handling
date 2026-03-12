@@ -34,6 +34,17 @@ class Student:
         self._grades[subject] = grade
         return True
 
+    # this method checks if the student ID is valid
+    def validate_id(self, student_id):
+
+        # check if ID is missing
+        if student_id == "":
+            raise ValueError("Student ID missing")
+
+        # check if ID starts with D00
+        if not student_id.upper().startswith("D00"):
+            raise InvalidIDError("Student ID must start with D00")
+
     # this method prints student information
     def __str__(self):
         return f"{self._student_id} - {self._name} - {self._grades}"
