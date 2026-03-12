@@ -60,6 +60,6 @@ class Student:
 
         return grade
 
-    # this method prints student information
+    # this method prints student informationss
     def __str__(self):
         return f"{self._student_id} - {self._name} - {self._grades}"
