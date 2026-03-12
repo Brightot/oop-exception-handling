@@ -45,6 +45,21 @@ class Student:
         if not student_id.upper().startswith("D00"):
             raise InvalidIDError("Student ID must start with D00")
 
+    # this method checks if the grade is valid
+    def validate_grade(self, grade):
+
+        # try converting grade to a number
+        try:
+            grade = float(grade)
+        except:
+            raise InvalidGradeError("Grade must be numeric")
+
+        # check if grade is between 0 and 100
+        if grade < 0 or grade > 100:
+            raise InvalidGradeError("Grade must be between 0 and 100")
+
+        return grade
+
     # this method prints student information
     def __str__(self):
         return f"{self._student_id} - {self._name} - {self._grades}"
