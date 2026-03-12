@@ -24,3 +24,7 @@ class Student:
         # otherwise add the subject and grade
         self._grades[subject] = grade
         return True
+
+    # this method prints student information
+    def __str__(self):
+        return f"{self._student_id} - {self._name} - {self._grades}"
