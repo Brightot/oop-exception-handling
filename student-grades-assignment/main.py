@@ -20,8 +20,13 @@ try:
         name = parts[1]
         subject = parts[2]
         grade = parts[3]
+        # creating a student object
+        student = Student(student_id, name)
 
-        print(student_id, name, subject, grade)
+        if student_id not in students:
+            students[student_id] = student
+
+        students[student_id].add_grade(subject, grade)
 
 except FileNotFoundError:
     print("File could not be found.")
