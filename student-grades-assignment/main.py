@@ -1,6 +1,6 @@
 
 # here I am importing the Student class
-from student import Student
+from student import Student, InvalidIDError, InvalidGradeError
 
 # dictionary to store all students
 # key = student id
