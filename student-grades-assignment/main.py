@@ -23,9 +23,16 @@ try:
         # creating a student object
         student = Student(student_id, name)
 
+        # checking if the id is valid
+        student.validate_id(student_id)
+
+        # checking if the id is valid
+        grade = student.validate_grade(grade)
+
+        # checking if the grade is valid
         if student_id not in students:
             students[student_id] = student
-
+        # adding the subject grade
         students[student_id].add_grade(subject, grade)
 
 except FileNotFoundError:
