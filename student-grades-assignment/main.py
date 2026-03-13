@@ -6,3 +6,11 @@ from student import Student, InvalidIDError, InvalidGradeError
 # key = student id
 # value = student object
 students = {}
+
+try:
+
+    # trying to open the grades file
+    file = open("grades.txt", "r")
+
+except FileNotFoundError:
+    print("File could not be found.")
