@@ -44,6 +44,9 @@ try:
 
         except IndexError:
             print("Missing data in line:", line.strip())
+
+            # closing the file after reading
+    file.close()
 except FileNotFoundError:
     print("File could not be found.")
 
