@@ -14,7 +14,22 @@ try:
 
     # reading the file one line at a time
     for line in file:
-        print(line)
+        parts = line.strip().split(",")
+
+        student_id = parts[0]
+        name = parts[1]
+        subject = parts[2]
+        grade = parts[3]
+
+        print(student_id, name, subject, grade)
 
 except FileNotFoundError:
     print("File could not be found.")
+
+
+
+
+
+
+
+
