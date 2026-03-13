@@ -12,5 +12,9 @@ try:
     # trying to open the grades file
     file = open("grades.txt", "r")
 
+    # reading the file one line at a time
+    for line in file:
+        print(line)
+
 except FileNotFoundError:
     print("File could not be found.")
