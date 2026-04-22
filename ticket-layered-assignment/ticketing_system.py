@@ -22,3 +22,9 @@ print("Agents:", service.get_agents())
 
 # get tickets for AgentA
 print("Tickets for AgentA:", service.get_tickets_for_agent("AgentA"))
+
+# assign next available ticket
+next_ticket = service.assign_next_ticket("AgentA")
+
+print("Next ticket assigned:", next_ticket)
+print("Unassigned tickets now:", service.get_unassigned_tickets())
