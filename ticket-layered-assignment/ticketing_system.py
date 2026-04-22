@@ -1,13 +1,18 @@
-# ticketing_system.py
 
 from ticket_service import TicketService
 
-# example data
 unassigned = ["Ticket1", "Ticket2"]
 assigned = {}
 
-# create service object
 service = TicketService(unassigned, assigned)
 
-# test
-print(service.get_unassigned_tickets())
+# display unassigned tickets first
+print("Unassigned tickets:", service.get_unassigned_tickets())
+
+result = service.assign_ticket("Ticket1", "AgentA")
+
+# show result of assignment
+print("Was ticket assigned?", result)
+
+# show updated unassigned tickets
+print("Unassigned tickets after assignment:", service.get_unassigned_tickets())
