@@ -29,3 +29,9 @@ class TicketService:
     
     def get_agents(self):
         return list(self._assigned_tickets.keys())
+    
+    def get_tickets_for_agent(self, agent):
+
+        if agent in self._assigned_tickets:
+            return self._assigned_tickets[agent]
+        return []
