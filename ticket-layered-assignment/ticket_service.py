@@ -8,3 +8,6 @@ class TicketService:
 
         # dictionary of assigned tickets
         self._assigned_tickets = assigned_tickets
+        # return all unassigned tickets
+    def get_unassigned_tickets(self):
+        return self._unassigned_tickets
