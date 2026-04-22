@@ -16,3 +16,6 @@ print("Was ticket assigned?", result)
 
 # show updated unassigned tickets
 print("Unassigned tickets after assignment:", service.get_unassigned_tickets())
+
+# show all agents
+print("Agents:", service.get_agents())
