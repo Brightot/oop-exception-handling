@@ -19,3 +19,6 @@ print("Unassigned tickets after assignment:", service.get_unassigned_tickets())
 
 # show all agents
 print("Agents:", service.get_agents())
+
+# get tickets for AgentA
+print("Tickets for AgentA:", service.get_tickets_for_agent("AgentA"))
