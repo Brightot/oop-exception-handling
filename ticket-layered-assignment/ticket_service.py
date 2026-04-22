@@ -26,3 +26,6 @@ class TicketService:
             return True
 
         return False
+    
+    def get_agents(self):
+        return list(self._assigned_tickets.keys())
