@@ -6,31 +6,15 @@ from ticket_data_access import TicketDataAccess
 # create data access object
 data_access = TicketDataAccess()
 
+# get ticket data from file
 unassigned, assigned = data_access.get_ticket_data("tickets.txt")
 
+# display data from file
 print("Unassigned from file:", unassigned)
 print("Assigned from file:", assigned)
 
-
-# --- OLD TEST CODE (still works for now) ---
-
-unassigned = ["Ticket1", "Ticket2"]
-assigned = {}
-
+# create service using file data
 service = TicketService(unassigned, assigned)
 
-print("Unassigned tickets:", service.get_unassigned_tickets())
-
-result = service.assign_ticket("Ticket1", "AgentA")
-
-print("Was ticket assigned?", result)
-print("Unassigned tickets after assignment:", service.get_unassigned_tickets())
-
+# display agents (simple check)
 print("Agents:", service.get_agents())
-
-print("Tickets for AgentA:", service.get_tickets_for_agent("AgentA"))
-
-next_ticket = service.assign_next_ticket("AgentA")
-
-print("Next ticket assigned:", next_ticket)
-print("Unassigned tickets now:", service.get_unassigned_tickets())
