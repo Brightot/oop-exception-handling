@@ -1,18 +1,16 @@
 from ticket_service import TicketService
 from ticket_data_access import TicketDataAccess
 
-# create data access object
 data_access = TicketDataAccess()
 
-# get ticket data from file
-unassigned, assigned = data_access.get_ticket_data("tickets.txt")
+filename = input("Enter ticket file name: ")
 
-# display data from file
+
+unassigned, assigned = data_access.get_ticket_data(filename)
+
 print("Unassigned from file:", unassigned)
 print("Assigned from file:", assigned)
 
-# create service using file data
 service = TicketService(unassigned, assigned)
 
-# display agents (simple check)
 print("Agents:", service.get_agents())
