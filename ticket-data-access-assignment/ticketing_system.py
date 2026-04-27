@@ -6,11 +6,10 @@ from ticket_data_access import TicketDataAccess
 # create data access object
 data_access = TicketDataAccess()
 
-# read ticket data from file
-lines = data_access.read_file("tickets.txt")
+unassigned, assigned = data_access.get_ticket_data("tickets.txt")
 
-# for now just print lines (we will process later)
-print("File data:", lines)
+print("Unassigned from file:", unassigned)
+print("Assigned from file:", assigned)
 
 
 # --- OLD TEST CODE (still works for now) ---
