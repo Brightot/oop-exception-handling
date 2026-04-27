@@ -2,47 +2,41 @@ class TicketDataAccess:
 
     def __init__(self):
         pass
-# this class will handle reading ticket data from file
-class TicketDataAccess:
 
-    def __init__(self):
-        pass
+    # this method reads file and returns lines
     def read_file(self, filename):
 
         file = open(filename, "r")
-
         lines = file.readlines()
-
         file.close()
 
         return lines
-    
-    # this method will process lines into data structures
-def get_ticket_data(self, filename):
 
-    lines = self.read_file(filename)
+    # this method processes the file into data
+    def get_ticket_data(self, filename):
 
-    unassigned = []
-    assigned = {}
+        lines = self.read_file(filename)
 
-    for line in lines:
+        unassigned = []
+        assigned = {}
 
-        parts = line.strip().split(",")
+        for line in lines:
 
-        if len(parts) < 2:
-            continue
+            parts = line.strip().split(",")
 
-        ticket = parts[0]
-        agent = parts[1]
+            if len(parts) < 2:
+                continue
 
-        # if no agent then unassigned it 
-        if agent == "":
-            unassigned.append(ticket)
+            ticket = parts[0]
+            agent = parts[1]
 
-        else:
-            if agent not in assigned:
-                assigned[agent] = []
+            if agent == "":
+                unassigned.append(ticket)
 
-            assigned[agent].append(ticket)
+            else:
+                if agent not in assigned:
+                    assigned[agent] = []
 
-    return unassigned, assigned
+                assigned[agent].append(ticket)
+
+        return unassigned, assigned

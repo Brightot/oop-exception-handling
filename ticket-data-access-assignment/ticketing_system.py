@@ -1,5 +1,3 @@
-# ticketing_system.py
-
 from ticket_service import TicketService
 from ticket_data_access import TicketDataAccess
 
